@@ -1,25 +1,46 @@
 
-import { StyleSheet, Text, Button, View } from 'react-native';
+import { StyleSheet, Text,  View, ImageBackground } from 'react-native';
+
+import { Button } from './shared/button/Button';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Одно из самых вкусных кофе в городе!</Text>
-      <Text style={styles.subtitle}>Свежие зёрна, настоящая арабика и бережная обжарка</Text>
-      <Button  title='Начать' color='#C67C4E'  />
+      <ImageBackground style={styles.background} source={require('./assets/main-background.png')} resizeMode='cover'>
+        <View style={styles.content} >
+        
+          <Text style={styles.title}>Одно из самых вкусных кофе в городе!</Text>
+          <Text style={styles.subtitle}>Свежие зёрна, настоящая арабика и бережная обжарка</Text>
+          <Button  text='Начать' color='#C67C4E'  />
+        
+        
+        </View>
+      </ImageBackground >
     </View>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 30,
-
+    height: '100%',
+    width: '100%',
     backgroundColor: '#000',
-
-    justifyContent: 'flex-end',
+    position: 'absolute',
+  },
+  background: {
+    position: 'absolute',
+    width: '100%',
+    height: '80%',
     
+
+  },
+  content: {
+    
+    top: '25%',
+    height: '100%',
+    justifyContent: 'flex-end',
+    padding: 30,
   },
   title: {
     maxWidth: 315,
